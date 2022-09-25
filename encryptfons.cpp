@@ -7,7 +7,7 @@
 |   |___ | | |   ||     |_ |   |  | |  |   |  |   |      |   |  |   |    |       || | |   | _____| |
 |_______||_|  |__||_______||___|  |_|  |___|  |___|      |___|  |___|    |_______||_|  |__||_______|
 
-v1.0
+v2.0
 
 creado por nachengue007 (github.com/nachengue007)
 
@@ -29,24 +29,48 @@ void Start(){
 
 string encrypt(string m){   
   string message = "";
-  int n = 0;
+  int *n = new int;
   
   for(int i = 0; i < m.length(); i++){
-  	n = rand() % 10;
-  	message += to_string(n);
-  	message += m[i]+n;
+  	*n = rand() % 10;
+  	message += to_string(*n);
+  	if(m[i] == 0){
+      message += m[i+1] + 4;
+	}
+  	else if(*n % 2 == 0){
+  	  message += m[i] + *n;
+    }
+  	else{
+  	  message += m[i] - *n;
+	}
   }
+  
+  delete n;
   
   return message;
 }
 
 string decrypt(string m){
   string message = "";
+  int *n = new int;
   
   for(int i = 0;i < m.length(); i++){
-  	message += m[i+1] - stoi(string(1, m[i]));
+  	*n = stoi(string(1, m[i]));
+  	
+  	if(m[i] == 0){
+      message += m[i+1] - 4;
+	}
+  	else if(m[i] % 2 == 0){
+  	  message += m[i+1] - *n;
+	}
+	else{
+	  message += m[i+1] + *n;
+	}
+  	
   	i++;
   }
+  
+  delete n;
   
   return message;
 }
@@ -60,7 +84,7 @@ void titulo(){
   cout<<"\n|   |___ | | |   ||     |_ |   |  | |  |   |  |   |      |   |  |   |    |       || | |   | _____| |";
   cout<<"\n|_______||_|  |__||_______||___|  |_|  |___|  |___|      |___|  |___|    |_______||_|  |__||_______|";
   
-  cout<<"\n\nhecho en: http://patorjk.com/software/taag/#p=display&f=Modular&t=EncryptFons";
+  cout<<"\n\ntitulo hecho en: http://patorjk.com/software/taag/#p=display&f=Modular&t=EncryptFons";
 }
 
 int main(){
@@ -124,16 +148,4 @@ int main(){
 
   return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
