@@ -35,7 +35,7 @@ Para macOS tambien recomiendo tener g++. Como nunca toque una mac, les dejo un l
 
 Para **Windows** no tengo mucho que comentar ya que no suelo usar el cmd asique solo recomiendo que usen Visual Studio o sino Dev-C++ que son los unicos IDEs que llegue a usar antes de que me pase a Linux.
 
-Para **SoloLearn (aplicación para aprender a programar y crear/editar scripts)** solamente aprieten Run y luego ingresen el mensaje a encriptar
+Para **SoloLearn (aplicación para aprender a programar y crear/editar scripts)** solamente aprieten Run y luego ingresen el mensaje a encriptar (link del codigo https://code.sololearn.com/cesELqfwNybs/?ref=app)
 
 ![sololearnimage](https://user-images.githubusercontent.com/65317862/193148130-b5b05098-dff0-4fa6-9350-40f40dc44e29.jpeg)
 
